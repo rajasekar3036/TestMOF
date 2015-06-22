@@ -1,0 +1,229 @@
+body, html
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: play;
+    background-size: 100%;
+}
+
+/* COMMON STYLES*/
+.view-content h1
+{
+    color: #42454a;
+    font-size: 1.8em;
+}
+
+.view-content h3
+{
+    color: #42454a;
+    font-size: 1.1em;
+}
+
+.view-content p
+{
+    color: #4a4e54;
+    font-size: 1em;
+}
+
+
+.position-left
+{
+    float: left;
+}
+
+.position-right
+{
+    float: right;
+}
+
+.position.center
+{
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.special-add-button
+{
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+}
+
+
+.km-ios .km-button.special-add-button
+{
+    font-size: 2em;
+    padding: 0.2em 0.5em;
+    border: 0px;
+    border-radius: 3px;
+    background-color: transparent;
+    box-shadow: none;
+    background-image:none;
+     color:white;
+}
+
+.km-ios .km-view .km-content .km-button.special-add-button
+{
+    background-color: transparent;
+    box-shadow:none;
+    background-image:none;
+     color:white;
+}
+ 
+
+.sub-title
+{
+    font-size: 1.5em;
+    color:white;
+}
+
+.km-ios .km-detail
+{
+    border-radius: 0px;
+    box-shadow:  none;
+    border: 0px;
+    background-color:transparent;
+    background-image: none;
+    padding:2em; 
+}
+
+.km-ios .km-detail:active
+{
+    border-radius: 0px;
+    box-shadow:  none;
+    border: 0px;
+    background-color:transparent;
+    background-image: none;
+    padding:2em;
+}
+
+ 
+html .km-ios .km-tabstrip .km-button:active, html .km-ios .km-tabstrip .km-state-active, html .km-ios .km-tabstrip .km-state-active:last-child, html .km-ios .km-tabstrip .km-button:active:last-child {
+  color: #FFF;
+  background-color:  #d3e5b8;
+  box-shadow : none; 
+  background-image: none; 
+}
+
+.km-ios .special-add-button .km-icon, .km-ios .km-detail .special-add-button .km-icon, .km-ios li.km-state-active .special-add-button .km-icon, .km-ios .special-add-button li.km-state-active, .km-ios .special-add-button .km-switch-label-on {
+  color: white;
+  background-image:none;
+}
+
+.km-ios .special-more .km-icon  {
+   color:#808080;
+  background-image:none;
+}
+
+.downArrow{
+    text-align : center;
+}
+
+
+.km-ios .km-button.special-button-1x
+{
+    font-size: 1em; 
+}
+ 
+
+.jobtext {
+     border-top : 1px solid #808080;
+     margin-top : 0.5em;
+     padding-top : 0.5em;
+     color: rgb(255, 102, 0);
+}
+
+
+.km-ios .km-listgroupinset .jobtext>.km-list>li {
+     border : 0px;
+}
+
+.km-ios .km-listgroupinset .jobtext>.km-list>li:first-child{
+    border : 0px;
+}
+
+.km-ios .km-listgroupinset .jobtext>.km-list>li:last-child{
+    border : 0px;
+}
+
+.km-ios .km-view .km-content .order_job_list_item.km-list > li {
+    border : 0px;
+    box-shadow:none;
+    font-size:1em;
+    color: #de7d3c;
+} 
+
+
+.itemliststyle-brand{
+     color: #335a71;
+     font-size:0.9em;
+}
+
+.itemliststyle-model{
+    color: #3c4d62;
+     font-size:0.9em;
+}
+
+.itemliststyle-plate{
+    color: #4b5860;
+     font-size:0.9em;
+}
+
+.commondueon{
+    color: #4b5e60;
+     font-size:0.9em;
+}
+
+ .mof_input_form {
+
+ }
+
+
+  .mof_input_form  input[type=text]:not(.k-input),  .mof_input_form  .km-list input[type=password], .mof_input_form  .km-list input[type=search], .mof_input_form  .km-list input[type=number], .mof_input_form  .km-list input[type=tel], .mof_input_form  .km-list input[type=url], .mof_input_form  .km-list input[type=email], .mof_input_form  .km-list input[type=file]
+  , .mof_input_form  .km-list input[type=month], .mof_input_form  .km-list input[type=color], .mof_input_form  .km-list input[type=week], .mof_input_form  .km-list input[type=date], .mof_input_form  .km-list input[type=time], .mof_input_form  .km-list input[type=datetime], .mof_input_form  .km-list input[type=datetime-local], .mof_input_form  .km-list select:not([multiple])
+  , .mof_input_form  .km-list .k-dropdown, .mof_input_form  .km-list textarea {
+  width: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.2em;  
+  line-height: normal;
+  z-index: 1;
+  right: 0; 
+
+  -webkit-appearance: none;
+  min-width: 6em;
+  border: 0;
+  padding: .4em;
+  outline: 0;
+  right: .8em;
+  background: transparent;
+}
+
+  .mof-title-selected{
+      color:#508001
+  }
+
+  .mof-user-default{
+      background-image : url('images/user.jpg') ;
+      width : 73px;
+      height : 73px;
+      display:inline-block;
+      border:2px solid #FFFFFF ;
+  }
+
+
+    .mof-user-chart{
+      background-image : url('images/chart.png');
+      width : 135px;
+      height : 135px;
+      display:inline-block;
+  }
+
+    .mof-special-text{
+        font-size:0.9em;
+        color:#9a103a;
+    }

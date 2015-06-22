@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.dataviz.default.min.css" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.mobile.all.min.css" />
+    <link rel="stylesheet" href="./kendo/styles/font-awesome.css" />
+
+    <link rel="stylesheet" href="./kendo/styles/km-fa-font.css" />
+    <link rel="stylesheet" href="./kendo/styles/kendo.mobile.exported_v4.css" />
+    <link rel="stylesheet" href="./kendo/styles/main_v2.css" />
+
+    <script src="./cordova.js"></script>
+    <script data-main="./kendo/js/main" src="./kendo/js/lib/require.min.js"></script>
+
+</head>
+<body>
+
+    <div id="login"
+        data-role="view"
+        data-title="Sign In"
+        data-transition="slide:left">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <footer data-role="footer">
+        </footer>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label class="signinlabel">
+                        User name
+                                <input id="usr_name" type="text" value="sys" />
+                    </label>
+                </li>
+                <li>
+                    <label class="signinlabel">
+                        Password
+                            <input id="usr_password" type="password" value="sysadmin123$" />
+                    </label>
+                </li>
+                <li>
+                    <i></i><a class="button" data-role="button" data-animated="true" data-icon="action" data-click="window.app.log_click" style="float: right">Login</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div data-role="layout" data-id="layout">
+
+        <footer data-role="footer">
+            <div class="fam" data-role="tabstrip">
+                <a href="brand_list" data-icon="fa-tag">Brand</a>
+                <a href="offer_list" data-icon="fa-bookmark">Offers</a>
+                <a href="barcode_scan" data-icon="fa-barcode">Barcode</a>
+                  <a href="user_list" data-icon="fa-bookmark">User</a>
+            </div>
+        </footer>
+    </div>
+
+    <div data-role="drawer" id="my-drawer" style="width: 270px" data-views="['user_account', 'barcode_scan','brand_list','offer_list','login','cards_list']">
+        <ul data-role="listview" data-type="group">
+            <li class="fam">Mobile Offer Finder
+            <ul id="garage_drawer">
+                <li data-icon="fa-user"><a href="#user_account" data-transition="none">My Account</a></li>
+                <li data-icon="fa-barcode"><a href="#barcode_scan" data-transition="none">Barcode</a></li>
+                <li data-icon="fa-tag"><a href="#brand_list" data-transition="none">Brand</a></li>
+                <li data-icon="fa-bookmark"><a href="#offer_list" data-transition="none">Offer</a></li>
+                 <li data-icon="fa-bookmark"><a href="#cards_list" data-transition="none">Cards</a></li>
+                <li data-icon="fa-power-off"><a href="#login" data-transition="none">Logout</a></li>
+                
+            </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="user_account"
+        data-role="view"
+        data-title="Sign In"
+        data-transition="slide:left"
+      data-after-show="window.app.load_CustomerSubtitle">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="fa-save" data-role="button" data-click="window.app.log_click_Save" id="save">Save</a>
+            </div>
+        </header>
+        <footer data-role="footer">
+        </footer>
+        <form>
+            <ul data-role="listview" data-style="inset" data-type="group" class="mof_input_form">
+                <li>User Account 
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <div class="mof-user-default" />
+                            </td>
+                            <td>
+                                <input id="txt_user_fname" type="text" placeholder="First Name" style="width:100%"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="txt_user_lname" type="text" placeholder="Last Name" style="width:100%" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input id="txt_user_email" type="text" placeholder="Email" style="width:100%" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input id="txt_user_mobile" type="text" placeholder="Mobile" style="width:100%"/></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>Status                               
+                     <table>
+                         <tr>
+                             <td class="mof-title-selected" style="width: 50%">
+                    <ul id="CustomerSubtitle_list_ul">
+                    </ul>                                      
+                             </td>
+                             <td  style="vertical-align:top">
+                                 <div style="padding:.2em" >
+                                     <div class="mof-special-text">57% to achieve the next target</div>
+                                 <div class="mof-user-chart">
+                                     </div>
+                                     </div>
+                                </td></tr></table>
+                        </li>
+                
+                   </ul>
+              <!--  <li >
+                   <i></i><a class="button fam" data-role="button" data-animated="true" data-icon="fa-user" data-click="window.app.log_click" style="float: right">Save</a>
+                </li>-->
+            
+        </form>
+    </div>
+   
+    <div data-role="view" id="barcode_scan" data-url="barcode_scan" data-title="barcode" data-init="window.app.barcode_init">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+
+        <form action="./index.html">
+            <div data-role="scroller" class="scroller-content" style="padding-bottom: 20px;">
+                <ul class="customerEdit" data-role="listview" data-style="inset">
+                    <li>
+                        <label class="labelname">
+                            Barcode Text
+                            <input type="search" id="barcodeValue" class="text-input input-style" value="2346722" />
+                        </label>
+                    </li>
+                    <li>
+                        <label class="labelname">
+                            Barcode
+                            <span id="barcodeTarget" />
+                        </label>
+                    </li>
+                    <li>
+                        <i></i><a class="button" data-role="button" data-animated="true" data-icon="action" data-click="window.app.generate_barcode" style="float: right">Generate</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="brand_list"
+        data-role="view"
+        data-title="Brands"
+        data-transition="slide:left"
+        data-init="window.app.load_brand">
+          <!-- data-after-show="window.app.showInBrand">-->
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-role="button" data-icon="fa-add-plus" data-bind="events: { click: brand_new }">Add</a>
+            </div>
+        </header>         
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                 <div class="itemliststyle">
+                    <ul id="brand_list_ul" 
+                        data-role="listview" data-style="inset">
+                    </ul>
+                </div>               
+            </li>
+        </ul>
+    </div>
+
+    <div id="offer_list" data-id="offer_list" data-role="view" data-title="Offer" data-after-show="window.app.load_offer">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="fa-add-plus" data-role="button" data-bind="events: { click: offer_new }">Add</a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                <ul id="offer_list_ul">
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+     <div id="user_list" data-id="user_list" data-role="view" data-title="User" data-init="window.app.load_User">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a class="button nav-button backbutton" data-role="backbutton" data-align="left" href="#:back">Back</a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="organize" data-role="button" data-bind="events: { click: user_new }">Add</a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                <ul id="user_list_ul">
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+     <div id="offer_list_detail" data-id="offer_list_detail" data-role="view" data-title="Offer" data-after-show="window.app.showInOfferDetail">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="fa-add-plus" data-role="button" data-bind="events: { click: offer_new }">Add</a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                <ul>
+                    <li>Title<div id="offer-detail-name"></div></li>
+                    <li>Description<div id="offer-detail-Desc"></div></li>
+                    <li>Image<div id="offer-detail-Image"></div></li>
+                    <li>Start Date<div id="offer-detail-startDate"></div></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+     <div id="cards_list" data-id="cards_list" data-role="view" data-title="Cards" data-init="window.app.load_Cards">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a class="button nav-button backbutton" data-role="backbutton" data-align="left" href="#:back">Back</a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="organize" data-role="button" data-bind="events: { click: cards_new }">Add</a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                <ul id="cards_list_ul">
+                </ul>
+            </li>
+        </ul>
+    </div>
+     <div id="cards_list_detail" data-id="cards_list_detail" data-role="view" data-title="Offer" data-after-show="window.app.showIncardsDetail">
+        <header data-role="header">
+            <div data-role="navbar" class="fam">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="fa-navicon" data-align="left"></a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-icon="fa-add-plus" data-role="button" data-bind="events: { click: cardsdetail_new }">Add</a>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                <ul>
+                    <li><table><tr><td>Bank</td><td></td>
+                        <td><input id="card-detail-bank" type="text"/></td></tr></table>
+                       </li>
+                    <li><table><tr><td>No</td><td colspan="2"></td>
+                        <td><label class="labelname" style="text-align:center">                           
+                            <span id="CardNo" style="text-align:right"/>
+                        </label></td></tr></table>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
